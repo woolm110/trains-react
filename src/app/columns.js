@@ -6,7 +6,7 @@ const styles = {
     float: 'left',
     textAlign: 'center',
     color: '#fff'
-  },
+  }
 };
 
 export class Columns extends Component {

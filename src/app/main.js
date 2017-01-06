@@ -32,10 +32,10 @@ export class Main extends Component {
     Request.get(url)
       .set('Accept', 'application/json')
       .then(response => {
-        const res = JSON.parse(response.text)
+        const res = JSON.parse(response.text);
         this.setState({
           trains: res.departures.all
-        })
+        });
       });
   }
 
@@ -47,7 +47,7 @@ export class Main extends Component {
           <div style={styles.column}>{train.aimed_departure_time}</div>
           <div style={styles.column}>{train.platform}</div>
         </div>
-      )
+      );
     });
     return (
       <div style={styles.container}>

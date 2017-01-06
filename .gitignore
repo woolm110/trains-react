@@ -4,7 +4,6 @@
 .Spotlight-V100
 .Trashes
 .editorconfig
-.babelrc
 npm-debug.log
 
 node_modules/

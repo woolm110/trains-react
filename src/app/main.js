@@ -2,16 +2,21 @@ import React, {Component} from 'react';
 import _ from 'underscore';
 import Request from 'superagent';
 import {Header} from './header';
-import {Columns} from './columns';
+import {ColumnHeading} from './columnHeading';
 
 const styles = {
   container: {
     maxWidth: '960px',
     margin: '0 auto'
   },
+  columnHeadingContainer: {
+    display: 'flex'
+  },
+  columnsContainer: {
+    display: 'flex'
+  },
   column: {
-    width: '33.33%',
-    float: 'left',
+    flex: '1',
     textAlign: 'center',
     color: '#fff',
     fontSize: '14px',
@@ -30,7 +35,6 @@ export class Main extends Component {
   componentWillMount() {
     const url = 'http://transportapi.com/v3/uk/train/station/WAT/live.json?app_id=03bf8009&app_key=d9307fd91b0247c607e098d5effedc97&calling_at=QRB&train_status=passenger';
     Request.get(url)
-      .set('Accept', 'application/json')
       .then(response => {
         const res = JSON.parse(response.text);
         this.setState({
@@ -41,20 +45,28 @@ export class Main extends Component {
 
   render() {
     const trains = _.map(this.state.trains, train => {
-      return (
-        <div key={train.train_uid}>
-          <div style={styles.column}>{train.destination_name}</div>
-          <div style={styles.column}>{train.aimed_departure_time}</div>
-          <div style={styles.column}>{train.platform}</div>
-        </div>
-      );
+      if (train.platform > 10) {
+        return (
+          <div style={styles.columnsContainer} key={train.train_uid}>
+            <div style={styles.column}>{train.destination_name}</div>
+            <div style={styles.column}>{train.aimed_departure_time}</div>
+            <div style={styles.column}>{train.platform}</div>
+          </div>
+        );
+      }
     });
     return (
       <div style={styles.container}>
         <Header/>
         <main>
-          <Columns/>
-          {trains}
+          <div style={styles.columnHeadingContainer}>
+            <ColumnHeading text="Destination"/>
+            <ColumnHeading text="Time"/>
+            <ColumnHeading text="Platform"/>
+          </div>
+          <div>
+            {trains}
+          </div>
         </main>
       </div>
     );

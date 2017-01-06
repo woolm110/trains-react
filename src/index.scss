@@ -1,0 +1,25 @@
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  background: #f7655a;
+}
+
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: #5aadbb;
+  }
+}

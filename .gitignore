@@ -1,0 +1,14 @@
+.DS_Store
+._*
+.tmp
+.Spotlight-V100
+.Trashes
+.editorconfig
+.babelrc
+npm-debug.log
+
+node_modules/
+bower_components/
+
+*.js
+*.js.map

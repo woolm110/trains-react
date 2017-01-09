@@ -34,9 +34,7 @@ export class Main extends Component {
             <ColumnHeading text="Time"/>
             <ColumnHeading text="Platform"/>
           </div>
-          <div>
-            <ResultsContainer departureStation="WAT" arrivalStation="QRB"/>
-          </div>
+          <ResultsContainer departureStation="WAT" arrivalStation="QRB"/>
         </main>
       </div>
     );

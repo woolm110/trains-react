@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Header} from './header';
 import {ColumnHeading} from './columnHeading';
-import {Results} from './results';
+import {ResultsContainer} from './resultsContainer';
 
 const styles = {
   container: {
@@ -35,7 +35,7 @@ export class Main extends Component {
             <ColumnHeading text="Platform"/>
           </div>
           <div>
-            <Results departureStation="WAT" arrivalStation="QRB"/>
+            <ResultsContainer departureStation="WAT" arrivalStation="QRB"/>
           </div>
         </main>
       </div>

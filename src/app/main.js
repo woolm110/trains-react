@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import _ from 'underscore';
-import Request from 'superagent';
 import {Header} from './header';
 import {ColumnHeading} from './columnHeading';
+import {Results} from './results';
 
 const styles = {
   container: {
@@ -25,36 +24,7 @@ const styles = {
 };
 
 export class Main extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loading: true
-    };
-  }
-
-  componentWillMount() {
-    const url = 'http://transportapi.com/v3/uk/train/station/WAT/live.json?app_id=03bf8009&app_key=d9307fd91b0247c607e098d5effedc97&calling_at=QRB&train_status=passenger';
-    Request.get(url)
-      .then(response => {
-        const res = JSON.parse(response.text);
-        this.setState({
-          trains: res.departures.all
-        });
-      });
-  }
-
   render() {
-    const trains = _.map(this.state.trains, train => {
-      if (train.platform > 10) {
-        return (
-          <div style={styles.columnsContainer} key={train.train_uid}>
-            <div style={styles.column}>{train.destination_name}</div>
-            <div style={styles.column}>{train.aimed_departure_time}</div>
-            <div style={styles.column}>{train.platform}</div>
-          </div>
-        );
-      }
-    });
     return (
       <div style={styles.container}>
         <Header/>
@@ -65,7 +35,7 @@ export class Main extends Component {
             <ColumnHeading text="Platform"/>
           </div>
           <div>
-            {trains}
+            <Results departureStation="WAT" arrivalStation="QRB"/>
           </div>
         </main>
       </div>

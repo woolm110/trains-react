@@ -27,7 +27,7 @@ class Main extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <Header/>
+        <Header title="Trains"/>
         <main>
           <div style={styles.columnHeadingContainer}>
             <ColumnHeading text="Destination"/>

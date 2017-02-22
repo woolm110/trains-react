@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 const styles = {
   header: {
@@ -14,14 +14,20 @@ const styles = {
   }
 };
 
-const Header = () => {
+const propTypes = {
+  title: PropTypes.string
+};
+
+const Header = props => {
   return (
     <header style={styles.header}>
       <h2 style={styles.title}>
-        Trains
+        {props.title}
       </h2>
     </header>
   );
 };
+
+Header.propTypes = propTypes;
 
 export default Header;

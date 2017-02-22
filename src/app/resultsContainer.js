@@ -1,12 +1,17 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import _ from 'underscore';
 import Request from 'axios';
-import {ResultsList} from './resultsList';
+import ResultsList from './ResultsList';
 
 const APP_KEY = 'd9307fd91b0247c607e098d5effedc97';
 const APP_ID = '03bf8009';
 
-export class ResultsContainer extends Component {
+const propTypes = {
+  departureStation: PropTypes.string.isRequired,
+  arrivalStation: PropTypes.string.isRequired
+};
+
+class ResultsContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -32,7 +37,6 @@ export class ResultsContainer extends Component {
   }
 }
 
-ResultsContainer.propTypes = {
-  departureStation: React.PropTypes.string.isRequired,
-  arrivalStation: React.PropTypes.string.isRequired
-};
+ResultsContainer.propTypes = propTypes;
+
+export default ResultsContainer;

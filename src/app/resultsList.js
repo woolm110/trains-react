@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import _ from 'underscore';
 
 const styles = {
@@ -19,7 +19,12 @@ const styles = {
   }
 };
 
-export class ResultsList extends Component {
+const propTypes = {
+  isLoading: PropTypes.bool,
+  trains: PropTypes.array
+};
+
+class ResultsList extends Component {
   renderResults() {
     return (
       _.map(this.props.trains, train => {
@@ -51,7 +56,6 @@ export class ResultsList extends Component {
   }
 }
 
-ResultsList.propTypes = {
-  isLoading: React.PropTypes.bool,
-  trains: React.PropTypes.array
-};
+ResultsList.propTypes = propTypes;
+
+export default ResultsList;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 const styles = {
   columnHeading: {
@@ -8,7 +8,11 @@ const styles = {
   }
 };
 
-export class ColumnHeading extends Component {
+const propTypes = {
+  text: PropTypes.string.isRequired
+};
+
+class ColumnHeading extends Component {
   render() {
     return (
       <div style={styles.columnHeading}><h3>{this.props.text}</h3></div>
@@ -16,6 +20,6 @@ export class ColumnHeading extends Component {
   }
 }
 
-ColumnHeading.propTypes = {
-  text: React.PropTypes.string.isRequired
-};
+ColumnHeading.propTypes = propTypes;
+
+export default ColumnHeading;

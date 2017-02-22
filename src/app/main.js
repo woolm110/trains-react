@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Header} from './header';
-import {ColumnHeading} from './columnHeading';
-import {ResultsContainer} from './resultsContainer';
+import Header from './Header';
+import ColumnHeading from './ColumnHeading';
+import ResultsContainer from './ResultsContainer';
 
 const styles = {
   container: {
@@ -23,7 +23,7 @@ const styles = {
   }
 };
 
-export class Main extends Component {
+class Main extends Component {
   render() {
     return (
       <div style={styles.container}>
@@ -40,3 +40,5 @@ export class Main extends Component {
     );
   }
 }
+
+export default Main;

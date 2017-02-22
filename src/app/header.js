@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const styles = {
   header: {
@@ -14,14 +14,14 @@ const styles = {
   }
 };
 
-export class Header extends Component {
-  render() {
-    return (
-      <header style={styles.header}>
-        <h2 style={styles.title}>
-          Trains
-        </h2>
-      </header>
-    );
-  }
-}
+const Header = () => {
+  return (
+    <header style={styles.header}>
+      <h2 style={styles.title}>
+        Trains
+      </h2>
+    </header>
+  );
+};
+
+export default Header;

@@ -6,7 +6,9 @@ const styles = {
     flex: '1',
     textAlign: 'center',
     fontSize: '14px',
-    minHeight: '40px'
+    height: '30px',
+    marginBottom: '10px',
+    border: '1px'
   }
 };
 

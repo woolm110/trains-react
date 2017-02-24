@@ -8,7 +8,10 @@ const styles = {
     fontSize: '14px',
     padding: '10px',
     maxWidth: '100px',
-    margin: '20px 0'
+    margin: '10px 0',
+    background: 'white',
+    border: '1px',
+    borderRadius: '3px'
   }
 };
 

@@ -23,11 +23,6 @@ const styles = {
     color: '#fff',
     fontSize: '14px',
     minHeight: '50px'
-  },
-  selectBoxContainer: {
-    display: 'flex',
-    maxWidth: '400px',
-    margin: '0 auto'
   }
 };
 
@@ -37,9 +32,11 @@ class Main extends Component {
       <div style={styles.container}>
         <Header title="Trains"/>
         <main>
-          <div style={styles.selectBoxContainer}>
+          <div style={styles.flexContainer}>
             <SelectBoxContainer name="Departure" defaultValue="WAT"/>
-            <SelectBoxContainer name="Destination" defaultValue="QRB"/>
+          </div>
+          <div style={styles.flexContainer}>
+            <SelectBoxContainer name="Departure" defaultValue="QRB"/>
           </div>
           <div style={styles.flexContainer}>
             <Button text="Find trains"/>

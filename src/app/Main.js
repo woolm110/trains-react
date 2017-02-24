@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Header from './Header';
-import ColumnHeading from './ColumnHeading';
 import ResultsContainer from './ResultsContainer';
 import SelectBoxContainer from './SelectBoxContainer';
 import Button from './Button';
@@ -14,6 +13,9 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  resultsContainer: {
+    marginTop: '20px'
   },
   column: {
     flex: '1',
@@ -42,12 +44,9 @@ class Main extends Component {
           <div style={styles.flexContainer}>
             <Button text="Find trains"/>
           </div>
-          <div style={styles.flexContainer}>
-            <ColumnHeading text="Destination"/>
-            <ColumnHeading text="Time"/>
-            <ColumnHeading text="Platform"/>
+          <div style={styles.resultsContainer}>
+            <ResultsContainer departureStation="WAT" arrivalStation="QRB"/>
           </div>
-          <ResultsContainer departureStation="WAT" arrivalStation="QRB"/>
         </main>
       </div>
     );

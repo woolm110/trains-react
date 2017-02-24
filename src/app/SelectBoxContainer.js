@@ -1,18 +1,17 @@
 import React, {Component, PropTypes} from 'react';
 import _ from 'underscore';
 import Request from 'axios';
-import ResultsList from './ResultsList';
+import SelectBox from './SelectBox';
 import Loading from './Loading';
 
 const APP_KEY = 'd9307fd91b0247c607e098d5effedc97';
 const APP_ID = '03bf8009';
 
 const propTypes = {
-  departureStation: PropTypes.string.isRequired,
-  arrivalStation: PropTypes.string.isRequired
+  name: PropTypes.string
 };
 
-class ResultsContainer extends Component {
+class SelectBoxContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -21,12 +20,12 @@ class ResultsContainer extends Component {
   }
 
   componentDidMount() {
-    const url = `http://transportapi.com/v3/uk/train/station/${this.props.departureStation}/live.json?app_id=${APP_ID}&app_key=${APP_KEY}&calling_at=${this.props.arrivalStation}&train_status=passenger`;
+    const url = `http://transportapi.com/v3/uk/train/stations/bbox.json?app_id=${APP_ID}&app_key=${APP_KEY}&minlon=-0.489&minlat=51.28&maxlon=0.236&maxlat=51.686`;
 
     Request.get(url)
       .then(response => {
         this.setState({
-          trains: response.data.departures.all,
+          stations: response.data.stations,
           isLoading: false
         });
       });
@@ -39,7 +38,7 @@ class ResultsContainer extends Component {
           this.state.isLoading ? (
             <Loading/>
           ) : (
-            <ResultsList trains={this.state.trains}/>
+            <SelectBox stations={this.state.stations} name={this.props.name}/>
           )
         }
       </div>
@@ -47,6 +46,6 @@ class ResultsContainer extends Component {
   }
 }
 
-ResultsContainer.propTypes = propTypes;
+SelectBoxContainer.propTypes = propTypes;
 
-export default ResultsContainer;
+export default SelectBoxContainer;

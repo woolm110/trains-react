@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header';
 import ColumnHeading from './ColumnHeading';
 import ResultsContainer from './ResultsContainer';
+import SelectBoxContainer from './SelectBoxContainer';
 
 const styles = {
   container: {
@@ -11,15 +12,17 @@ const styles = {
   columnHeadingContainer: {
     display: 'flex'
   },
-  columnsContainer: {
-    display: 'flex'
-  },
   column: {
     flex: '1',
     textAlign: 'center',
     color: '#fff',
     fontSize: '14px',
     minHeight: '50px'
+  },
+  selectBoxContainer: {
+    display: 'flex',
+    maxWidth: '400px',
+    margin: '0 auto'
   }
 };
 
@@ -29,6 +32,10 @@ class Main extends Component {
       <div style={styles.container}>
         <Header title="Trains"/>
         <main>
+          <div style={styles.selectBoxContainer}>
+            <SelectBoxContainer name="Departure"/>
+            <SelectBoxContainer name="Destination"/>
+          </div>
           <div style={styles.columnHeadingContainer}>
             <ColumnHeading text="Destination"/>
             <ColumnHeading text="Time"/>

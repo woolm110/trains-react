@@ -2,7 +2,11 @@ import 'babel-polyfill';
 
 import React from 'react';
 import {render} from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 
 import Main from './app/main';
 import NotFound from './app/NotFound';
@@ -11,9 +15,13 @@ import './index.scss';
 
 const Root = () => {
   return (
-    <Router history={browserHistory}>
-      <Route path="/" component={Main}/>
-      <Route path="*" component={NotFound}/>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/" exact component={Main}/>
+          <Route component={NotFound}/>
+        </Switch>
+      </div>
     </Router>
   );
 };

@@ -20,7 +20,6 @@ const styles = {
 };
 
 const propTypes = {
-  isLoading: PropTypes.bool,
   trains: PropTypes.array
 };
 
@@ -41,16 +40,10 @@ class ResultsList extends Component {
     );
   }
 
-  renderLoading() {
-    return (
-      <div style={styles.loading}>Loading...</div>
-    );
-  }
-
   render() {
     return (
       <div>
-        {this.props.isLoading ? this.renderLoading() : this.renderResults()}
+        {this.renderResults()}
       </div>
     );
   }

@@ -12,6 +12,13 @@ const propTypes = {
   defaultValue: PropTypes.string
 };
 
+const bbox = {
+  minLat: 51.28,
+  maxLat: 51.696,
+  minLon: 0.489,
+  maxLon: 0.236
+};
+
 class SelectBoxContainer extends Component {
   constructor() {
     super();
@@ -21,7 +28,7 @@ class SelectBoxContainer extends Component {
   }
 
   componentDidMount() {
-    const url = `http://transportapi.com/v3/uk/train/stations/bbox.json?app_id=${APP_ID}&app_key=${APP_KEY}&minlon=-0.489&minlat=51.28&maxlon=0.236&maxlat=51.686`;
+    const url = `http://transportapi.com/v3/uk/train/stations/bbox.json?app_id=${APP_ID}&app_key=${APP_KEY}&minlon=-${bbox.minLon}&minlat=${bbox.minLat}&maxlon=${bbox.maxLon}&maxlat=${bbox.maxLat}`;
 
     Request.get(url)
       .then(response => {

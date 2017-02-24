@@ -11,11 +11,6 @@ const styles = {
     color: '#fff',
     fontSize: '14px',
     minHeight: '50px'
-  },
-  loading: {
-    textAlign: 'center',
-    color: '#fff',
-    fontSize: '18px'
   }
 };
 

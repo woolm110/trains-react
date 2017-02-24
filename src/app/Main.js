@@ -3,14 +3,17 @@ import Header from './Header';
 import ColumnHeading from './ColumnHeading';
 import ResultsContainer from './ResultsContainer';
 import SelectBoxContainer from './SelectBoxContainer';
+import Button from './Button';
 
 const styles = {
   container: {
     maxWidth: '960px',
     margin: '0 auto'
   },
-  columnHeadingContainer: {
-    display: 'flex'
+  flexContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   column: {
     flex: '1',
@@ -36,7 +39,10 @@ class Main extends Component {
             <SelectBoxContainer name="Departure" defaultValue="WAT"/>
             <SelectBoxContainer name="Destination" defaultValue="QRB"/>
           </div>
-          <div style={styles.columnHeadingContainer}>
+          <div style={styles.flexContainer}>
+            <Button text="Find trains"/>
+          </div>
+          <div style={styles.flexContainer}>
             <ColumnHeading text="Destination"/>
             <ColumnHeading text="Time"/>
             <ColumnHeading text="Platform"/>

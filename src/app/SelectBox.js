@@ -12,7 +12,8 @@ const styles = {
 
 const propTypes = {
   stations: PropTypes.array,
-  name: PropTypes.string
+  name: PropTypes.string,
+  defaultValue: PropTypes.string
 };
 
 class SelectBox extends Component {
@@ -28,7 +29,7 @@ class SelectBox extends Component {
 
   render() {
     return (
-      <select style={styles.select} name={this.props.name}>
+      <select style={styles.select} name={this.props.name} defaultValue={this.props.defaultValue}>
         {this.renderValues()}
       </select>
     );

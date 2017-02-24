@@ -8,7 +8,8 @@ const APP_KEY = 'd9307fd91b0247c607e098d5effedc97';
 const APP_ID = '03bf8009';
 
 const propTypes = {
-  name: PropTypes.string
+  name: PropTypes.string,
+  defaultValue: PropTypes.string
 };
 
 class SelectBoxContainer extends Component {
@@ -38,7 +39,7 @@ class SelectBoxContainer extends Component {
           this.state.isLoading ? (
             <Loading/>
           ) : (
-            <SelectBox stations={this.state.stations} name={this.props.name}/>
+            <SelectBox stations={this.state.stations} name={this.props.name} defaultValue={this.props.defaultValue}/>
           )
         }
       </div>

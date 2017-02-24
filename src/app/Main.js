@@ -33,8 +33,8 @@ class Main extends Component {
         <Header title="Trains"/>
         <main>
           <div style={styles.selectBoxContainer}>
-            <SelectBoxContainer name="Departure"/>
-            <SelectBoxContainer name="Destination"/>
+            <SelectBoxContainer name="Departure" defaultValue="WAT"/>
+            <SelectBoxContainer name="Destination" defaultValue="QRB"/>
           </div>
           <div style={styles.columnHeadingContainer}>
             <ColumnHeading text="Destination"/>

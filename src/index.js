@@ -18,7 +18,7 @@ const Root = () => {
     <Router>
       <div>
         <Switch>
-          <Route path="/" exact component={Main}/>
+          <Route path="*" component={Main}/>
           <Route component={NotFound}/>
         </Switch>
       </div>

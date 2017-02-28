@@ -1,8 +1,14 @@
 import React from 'react';
 
+const styles = {
+  wrapper: {
+    marginBottom: '20px'
+  }
+};
+
 const Loading = () => {
   return (
-    <div>loading...</div>
+    <div style={styles.wrapper}>loading...</div>
   );
 };
 

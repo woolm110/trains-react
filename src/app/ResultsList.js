@@ -11,6 +11,9 @@ const styles = {
     color: '#fff',
     fontSize: '14px',
     minHeight: '50px'
+  },
+  resultsWrapper: {
+    marginTop: '40px'
   }
 };
 
@@ -22,22 +25,20 @@ class ResultsList extends Component {
   renderResults() {
     return (
       _.map(this.props.trains, train => {
-        if (train.platform > 10) {
-          return (
-            <div style={styles.columnsContainer} key={train.train_uid}>
-              <div style={styles.column}>{train.destination_name}</div>
-              <div style={styles.column}>{train.aimed_departure_time}</div>
-              <div style={styles.column}>{train.platform}</div>
-            </div>
-          );
-        }
+        return (
+          <div style={styles.columnsContainer} key={train.train_uid}>
+            <div style={styles.column}>{train.destination_name}</div>
+            <div style={styles.column}>{train.aimed_departure_time}</div>
+            <div style={styles.column}>{train.platform}</div>
+          </div>
+        );
       })
     );
   }
 
   render() {
     return (
-      <div>
+      <div style={styles.resultsWrapper}>
         {this.renderResults()}
       </div>
     );

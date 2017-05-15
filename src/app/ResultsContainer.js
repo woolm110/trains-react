@@ -4,8 +4,8 @@ import Request from 'axios';
 import ResultsList from './ResultsList';
 import Loading from './Loading';
 
-const APP_KEY = 'd9307fd91b0247c607e098d5effedc97';
-const APP_ID = '03bf8009';
+const APP_KEY = '08d9182a9680140326f756a23cb14749';
+const APP_ID = 'a2f34086';
 
 const propTypes = {
   departureStation: PropTypes.string.isRequired,
@@ -21,7 +21,7 @@ class ResultsContainer extends Component {
   }
 
   componentDidMount() {
-    const url = `http://transportapi.com/v3/uk/train/station/${this.props.departureStation}/live.json?app_id=${APP_ID}&app_key=${APP_KEY}&calling_at=${this.props.arrivalStation}&train_status=passenger`;
+    const url = `//transportapi.com/v3/uk/train/station/${this.props.departureStation}/live.json?app_id=${APP_ID}&app_key=${APP_KEY}&calling_at=${this.props.arrivalStation}&train_status=passenger`;
 
     Request.get(url)
       .then(response => {

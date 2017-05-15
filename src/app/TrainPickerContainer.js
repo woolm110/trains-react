@@ -5,8 +5,8 @@ import ResultsContainer from './ResultsContainer';
 import SelectBox from './SelectBox';
 import Loading from './Loading';
 
-const APP_KEY = 'd9307fd91b0247c607e098d5effedc97';
-const APP_ID = '03bf8009';
+const APP_KEY = '08d9182a9680140326f756a23cb14749';
+const APP_ID = 'a2f34086';
 
 const styles = {
   button: {
@@ -55,7 +55,7 @@ class TrainPickerContainer extends Component {
   }
 
   componentDidMount() {
-    const url = `http://transportapi.com/v3/uk/train/stations/bbox.json?app_id=${APP_ID}&app_key=${APP_KEY}&minlon=-${bbox.minLon}&minlat=${bbox.minLat}&maxlon=${bbox.maxLon}&maxlat=${bbox.maxLat}`;
+    const url = `//transportapi.com/v3/uk/train/stations/bbox.json?app_id=${APP_ID}&app_key=${APP_KEY}&minlon=-${bbox.minLon}&minlat=${bbox.minLat}&maxlon=${bbox.maxLon}&maxlat=${bbox.maxLat}`;
 
     Request.get(url)
       .then(response => {
